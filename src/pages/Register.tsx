@@ -9,7 +9,6 @@ const Register: React.FC = () => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-
     try {
       const response = await fetch('http://127.0.0.1/create_user.php', {
         method: 'POST',
@@ -30,34 +29,65 @@ const Register: React.FC = () => {
         setSuccess('');
       }
     } catch (error) {
-      console.error('Error de conexión:', error);
       setError('Error de conexión con el servidor');
       setSuccess('');
     }
   };
 
   return (
-    <div style={{ maxWidth: '300px', margin: 'auto', padding: '20px', border: '1px solid #ccc', borderRadius: '5px' }}>
-      <h2>Registro</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {success && <p style={{ color: 'green' }}>{success}</p>}
+    <div style={{
+      maxWidth: '400px',
+      margin: '50px auto',
+      padding: '40px',
+      boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+      borderRadius: '8px',
+      backgroundColor: '#ffffff'
+    }}>
+      <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Registro</h2>
+      {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
+      {success && <p style={{ color: 'green', textAlign: 'center' }}>{success}</p>}
       <form onSubmit={handleSubmit}>
-        <label>
-          Nombre de Usuario:
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
-        </label>
-        <br />
-        <label>
-          Correo Electrónico:
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        </label>
-        <br />
-        <label>
-          Contraseña:
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        </label>
-        <br />
-        <button type="submit">Registrarse</button>
+        <div style={{ marginBottom: '15px' }}>
+          <label style={{ display: 'block', marginBottom: '5px' }}>Nombre de Usuario:</label>
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+            style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid #ccc' }}
+          />
+        </div>
+        <div style={{ marginBottom: '15px' }}>
+          <label style={{ display: 'block', marginBottom: '5px' }}>Correo Electrónico:</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid #ccc' }}
+          />
+        </div>
+        <div style={{ marginBottom: '15px' }}>
+          <label style={{ display: 'block', marginBottom: '5px' }}>Contraseña:</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid #ccc' }}
+          />
+        </div>
+        <button type="submit" style={{
+          width: '100%',
+          padding: '10px',
+          backgroundColor: '#28a745',
+          color: '#fff',
+          border: 'none',
+          borderRadius: '4px',
+          cursor: 'pointer'
+        }}>
+          Registrarse
+        </button>
       </form>
     </div>
   );
