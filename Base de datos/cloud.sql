@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-06-2025 a las 20:29:37
+-- Tiempo de generación: 07-07-2025 a las 05:18:42
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -107,7 +107,8 @@ INSERT INTO `user` (`id`, `email`, `password`, `username`, `created_at`, `create
 (1, 'ejemplo@mail.com', '123456', 'usuarioPrueba', '2025-05-29 23:32:29', 'system', '2025-05-29 23:56:17', 'admin', 1),
 (2, 'ejemplo@ail.com', '123466', 'usuaioPrueba', '2025-05-29 23:44:04', 'system', '2025-05-29 23:44:04', NULL, 0),
 (3, 'elpapu@gmail.com', 'vaen1234', 'Vaen', '2025-05-29 23:47:44', 'system', '2025-05-29 23:56:36', 'admin', 1),
-(4, 'amigo123@gmail.com', '123456', '123456', '2025-06-30 01:15:13', 'system', '2025-06-30 01:15:13', NULL, 1);
+(4, 'amigo123@gmail.com', '123456', '123456', '2025-06-30 01:15:13', 'system', '2025-06-30 01:15:13', NULL, 1),
+(5, 'calico123@gmail.com', '123456', 'calico', '2025-07-06 22:01:13', 'system', '2025-07-06 22:01:13', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -188,7 +189,7 @@ ALTER TABLE `game_scores`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `user_tokens`
